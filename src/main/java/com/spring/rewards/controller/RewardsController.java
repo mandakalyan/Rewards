@@ -55,12 +55,12 @@ public class RewardsController {
             @RequestBody Map<String, Object> requestBody) {
 
         try {
-            
+        	
             long rewardId = ((Number) requestBody.get("id")).longValue();
             boolean approve = (boolean) requestBody.get("approve");
 
             Rewards reward = rewardsService.approveOrRejectRewards(empId, rewardId, approve);
-
+            
             if (reward != null) {
                 return ResponseEntity.ok(reward);
             } else {

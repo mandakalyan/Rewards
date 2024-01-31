@@ -49,6 +49,7 @@ public class RewardsService {
 		reward.setComments(rewards.getComments());
 		reward.setStatus("Pending");
 		parentEmployee.addReward(reward);
+		reward.setEmpName(childEmployee.getEmpName());
 		empRepo.save(parentEmployee);
 		 
 		return reward;
@@ -117,5 +118,7 @@ public class RewardsService {
 		 
 		 
 	 }
+	 
+	
 
 }

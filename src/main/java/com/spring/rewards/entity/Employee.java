@@ -48,11 +48,22 @@ public class Employee {
 	@OneToMany(fetch= FetchType.EAGER,mappedBy="parent",cascade= CascadeType.ALL)
 	private List<Rewards> rewards= new ArrayList<>();
 	
+	@OneToMany(fetch=FetchType.EAGER,mappedBy="parent",cascade=CascadeType.ALL)
+	private List<TeamRewards> teamRewards= new ArrayList<>();
+	
+	@ManyToOne(fetch=FetchType.EAGER)
+	@JoinColumn(name="team_id")
+	private Team team;
+	
 	  public void addReward(Rewards reward) {
 	        this.rewards.add(reward);
 	        reward.setParent(this); // Assuming you have a setParent method in Rewards class
 	    }
 	  
+	  public void addTeamReward(TeamRewards teamReward) {
+		  this.teamRewards.add(teamReward);
+		  teamReward.setParent(this);
+	  }
 		public Employee(User user, Set<Role> roles) {
 
 			this.user=user;
