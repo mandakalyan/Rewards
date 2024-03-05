@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.spring.rewards.entity.Team;
@@ -139,6 +140,17 @@ public class TeamRewardsController {
 			
 		}
 		
+		}
+		
+		@GetMapping("/getTeamRewards")
+		public List<TeamRewards> getTeamRewardsForTeams(){
+			return teamRewardService.getTeamRewardsForTeams();
+		}
+		
+		
+		@GetMapping("/test/getTeamName/{empId}")
+		public String getTeamName(@PathVariable Long empId) {
+		    return  teamRewardService.getTeamName(empId);
 		}
 		
 }

@@ -58,7 +58,7 @@
 		</dependency>
 
 
-        	<dependency>
+		<dependency>
 			<groupId>io.jsonwebtoken</groupId>
 			<artifactId>jjwt</artifactId>
 			<version>0.9.1</version>
@@ -85,6 +85,18 @@
 			<groupId>com.microsoft.azure</groupId>
 			<artifactId>adal4j</artifactId>
 			<version>1.6.4</version>
+		</dependency>
+
+
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi</artifactId>
+			<version>5.2.4</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi-ooxml</artifactId>
+			<version>5.2.4</version>
 		</dependency>
 
 

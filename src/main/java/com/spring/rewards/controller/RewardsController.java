@@ -107,7 +107,7 @@ public class RewardsController {
     
      
     @GetMapping("/myrequests/{empId}")
-    public ResponseEntity<Object> getRewardRequestsForUser(@PathVariable Long empId) {
+    public ResponseEntity<Object> getRewardForUser(@PathVariable Long empId) {
 
         try {
             List<Rewards> rewardRequests = rewardsService.getRewardsForUser(empId);

@@ -55,6 +55,8 @@ public class Employee {
 	@JoinColumn(name="team_id")
 	private Team team;
 	
+	private String tescoId;
+	
 	  public void addReward(Rewards reward) {
 	        this.rewards.add(reward);
 	        reward.setParent(this); // Assuming you have a setParent method in Rewards class

@@ -99,5 +99,22 @@ public class TeamRewardsService {
     	 return teamRepo.findAll();
     	 
      }
+     
+     public List<TeamRewards> getTeamRewardsForTeams(){
+			return tRepo.findAll();
+			
+		}
+     
+     
+     public String getTeamName(Long empId) {
+    	 Optional<Employee> employee= empRepo.findById(empId);
+    	 if(employee.isPresent()) {
+    	 String teamName=employee.get().getTeam().getTeamName();
+    	 return teamName;
+    	 }
+    	 else {
+    		 return "employee not found";
+    	 }
+     }
 
 }
